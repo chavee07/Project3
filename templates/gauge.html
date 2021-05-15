@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gauge</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin="" />
+  <link rel="stylesheet" href={{ url_for("static", filename="style.css") }}>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+</head>
+
+<body>
+<!-- Navigation Bar Setup -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand" href="index">Home</a>
+    <li>
+      <li class="nav-item ">
+        <a class="dropdown-item" href="landing">Data</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-secondary" href="bar">Bar</a>
+      </li>
+      <li class="nav-item ">
+        <a class="dropdown-item" href="bubble">Bubble</a>
+      </li>
+      <li class="nav-item ">
+        <a class="dropdown-item" href="gauge">Gauge</a>
+      </li>
+      <!-- <li class="nav-item ">
+        <a class="dropdown-item" href="maps">Map</a>
+      </li> -->
+    </li>
+
+
+  </nav>
+
+<!-- Banner Setup -->
+
+<div class="background">
+        <div class="banner-area">
+          <span class="text-wrapper">
+            <span class="letters" id="letters">Delightful Libation</span>
+          </span>
+        </div>                  
+</div>   
+
+<!-- Content Area -->
+    <!-- <div class="row"> -->
+      <div class="content-area">
+        <div class="wrapper">
+          <h2>Gauge Chart</h2>
+          <!-- <p>typetest </p>
+          <div id="chart"></div> -->
+      <div class="col-md-2"> 
+        <div class="well">
+          <h5 style ="color: rgb(91, 144, 223)">Country:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Country Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+
+    <div class="col-md-5">
+  <div id="gauge2"></div>
+</div>
+
+    <!-- </div> -->
+  </div>
+</div>
+</div>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+  <!-- <script type="text/javascript" src={{ url_for("static", filename="logic.js") }}></script> -->
+  <link rel="stylesheet" href={{ url_for("static", filename="gauge.css") }}>
+  <script type="text/javascript" src={{ url_for("static", filename="gauge.js") }}></script>
+  
+  <script src={{ url_for("static", filename="anime.js") }}></script>
+  
+  
+</body>
+
+</html>

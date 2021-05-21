@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Bar Chart</title>
+  <title>Index page</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -30,9 +30,9 @@
         <li class="nav-item ">
           <a class="dropdown-item" href="gauge">Gauge</a>
         </li>
-        <!-- <li class="nav-item ">
+        <li class="nav-item ">
           <a class="dropdown-item" href="maps">Map</a>
-        </li> -->
+        </li>
       </li>
 
 
@@ -51,9 +51,12 @@
 <!-- Content Area -->
 <div class="content-area">
   <div class="wrapper">
-    <h2>Bar Chart</h2>
-    <p>This is a bar chart depicting the top 10 and bottom 10 countries according to their Happiness Scores for 2018. The x-axis is the country names and the Y-axis is the country's Happiness Score.</p>
-    <div id="chart"></div>
+    <h2>welcome</h2>
+    <p>Welcome to our data visualization page! Here we explore the correlations between a country's alcohol consumption and their happiness score. We found there is a moderately positive correlation of 0.38 with alcohol consumption and a country's happiness score. </p>
+    <p>The "Happiness Score" was taken from the World Happiness Report made in 2018 and the data for levels of alcohol consumption was provided by the World Health Organization in 2018. The measurements for "alcohol consumption" are projected estimate of pure alcohol by liters per capita for consumers that are 15 years of age or older.</p>
+    <p>Finland was the happiest country with a score of 7.69 and Burundi was at the bottom of the list with a score of 2.9. Countries with a Happiness Score above 7 averaged 9.69 liters of pure alcohol per capita. Countries with Happiness Scores of 4 or below averaged 4.72 liters of pure alcohol per capita.</p>
+    <p>While there is a correlation between the two factors, it is not strong enough to imply causation. Further data analysis could explore other indicators what else may increase or decrease a country's alcohol conusumption level or their happiness score.</p>
+    <p>This project is presented to you by: Aaron Sotelo, Darrious Matthews, Joan Choi, and Jorge Chavez.</p>
   </div>
 </div>
 
@@ -73,13 +76,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
 
-
-<!-- <script type="text/javascript" src={{ url_for("static", filename="logic.js") }}></script> -->
+<!-- links to local js files-->
 <!-- <script type="text/javascript" src={{ url_for("static", filename="app.js") }}></script> -->
-<script type="text/javascript" src={{ url_for("static", filename="single_bar2.js") }}></script>
 <script src={{ url_for("static", filename="anime.js") }}></script>
-  <!-- <script type="text/javascript" src="app.js"></script> --> 
-
 
 </body>
 </html>

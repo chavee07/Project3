@@ -1,6 +1,6 @@
-import pandas as pd
+# import pandas as pd
 import sqlite3
-from sqlalchemy.orm import Session
+# from sqlalchemy.orm import Session
 import pprint
 from flask import Flask, request, render_template, jsonify, current_app
 import json

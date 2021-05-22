@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 
-
 <head>
   <meta charset="UTF-8">
-  <title>Index page</title>
+  <title>Scatterplot</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -44,7 +43,7 @@
 <!-- Banner Setup -->
 
 <div class="background">
-        <div class="banner-area">
+        <div class="banner-area"
           <span class="text-wrapper">
             <span class="letters" id="letters">Delightful Libation</span>
           </span>
@@ -54,16 +53,13 @@
 <!-- Content Area -->
 <div class="content-area">
   <div class="wrapper">
-    <h2>welcome</h2>
-    <p>Welcome to our data visualization page! Here we explore the correlations between a country's alcohol consumption and their happiness score. We found there is a moderately positive correlation of 0.38 with alcohol consumption and a country's happiness score. </p>
-    <p>The "Happiness Score" was taken from the World Happiness Report made in 2018 and the data for levels of alcohol consumption was provided by the World Health Organization in 2018. The measurements for "alcohol consumption" are projected estimate of pure alcohol by liters per capita for consumers that are 15 years of age or older.</p>
-    <p>Finland was the happiest country with a score of 7.69 and Burundi was at the bottom of the list with a score of 2.9. Countries with a Happiness Score above 7 averaged 9.69 liters of pure alcohol per capita. Countries with Happiness Scores of 4 or below averaged 4.72 liters of pure alcohol per capita.</p>
-    <p>While there is a correlation between the two factors, it is not strong enough to imply causation. Further data analysis could explore other indicators what else may increase or decrease a country's alcohol conusumption level or their happiness score.</p>
-    <p>This project is presented to you by: Aaron Sotelo, Darrious Matthews, Joan Choi, and Jorge Chavez.</p>
+    <h2>scatterplot</h2>
+    <p>Use the dropdown menu to toggle between a country's happiness score or alcohol consumption level (by liter/capita) and other factors of happiness.</p>
+    <div class='tableauPlaceholder' id='viz1621714681920' style='position: relative'><noscript><a href='#'><img alt='interactive scatterplot ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;pr&#47;project_3_map&#47;interactivescatterplot&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='project_3_map&#47;interactivescatterplot' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;pr&#47;project_3_map&#47;interactivescatterplot&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1621714681920');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
   </div>
 </div>
 
-<!-- Leaflet JS -->
+ <!-- Leaflet JS -->
  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
@@ -71,17 +67,21 @@
 
 <script src="https://d3js.org/d3.v5.min.js"></script>
 
-
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
 
-<!-- links to local js files-->
-<!-- <script type="text/javascript" src={{ url_for("static", filename="app.js") }}></script> -->
 <script src={{ url_for("static", filename="anime.js") }}></script>
+<script src={{ url_for("static", filename="choropleth.js") }}></script>
+
+
+<script type="text/javascript" src={{ url_for("static", filename="config.js") }}></script>
+<script type="text/javascript" src={{ url_for("static", filename="mapbox.js") }}></script>
+
+  <!-- <script type="text/javascript" src="app.js"></script> --> 
+
 
 </body>
 </html>

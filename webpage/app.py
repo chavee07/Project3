@@ -1,5 +1,4 @@
-# import pandas as pd
-# import sqlite3
+# import dependencies
 import psycopg2
 import pprint
 from flask import Flask, request, render_template, jsonify, current_app
@@ -35,10 +34,10 @@ def names():
     #################################################
     # create params_dic
     param_dic = {
-    "host"      : "[endpointurl]",
+    "host"      : "endpointrds.amazonaws.com",
     "database"  : "project3",
-    "user"      : "[user]",
-    "password"  : "[password]"
+    "user"      : "user",
+    "password"  : "password"
     }
 
     # set up connection
@@ -84,13 +83,21 @@ def maps():
 def bar():
     return render_template('bar.html')
 
-@app.route("/bubble")
-def bubble():
-    return render_template('bubble.html')
+# @app.route("/bubble")
+# def bubble():
+#     return render_template('bubble.html')
 
 @app.route("/gauge")
 def gauge():
     return render_template('gauge.html')
+
+@app.route("/scatterplot")
+def scatter():
+    return render_template('scatterplot.html')
+
+@app.route("/machinelearning")
+def ml():
+    return render_template('machinelearning.html')
 
 
 

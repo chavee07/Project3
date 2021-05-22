@@ -34,10 +34,10 @@ def names():
     #################################################
     # create params_dic
     param_dic = {
-    "host"      : "endpointrds.amazonaws.com",
+    "host"      : 'endpoint',
     "database"  : "project3",
     "user"      : "user",
-    "password"  : "password"
+    "password"  : "user"
     }
 
     # set up connection
@@ -82,10 +82,6 @@ def maps():
 @app.route("/bar")
 def bar():
     return render_template('bar.html')
-
-# @app.route("/bubble")
-# def bubble():
-#     return render_template('bubble.html')
 
 @app.route("/gauge")
 def gauge():

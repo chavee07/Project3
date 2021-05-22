@@ -1,9 +1,10 @@
 # import pandas as pd
-import sqlite3
-# from sqlalchemy.orm import Session
+# import sqlite3
+import psycopg2
 import pprint
 from flask import Flask, request, render_template, jsonify, current_app
 import json
+from sqlalchemy import create_engine
 
 #################################################
 # Flask Setup
@@ -32,14 +33,26 @@ def names():
     #################################################
     # Database Setup
     #################################################
-    con = sqlite3.connect("../Data/project3.sqlite")
+    # create params_dic
+    param_dic = {
+    "host"      : "[endpointurl]",
+    "database"  : "project3",
+    "user"      : "[user]",
+    "password"  : "[password]"
+    }
 
-    db = con.cursor()
+    # set up connection
+    connect = "postgresql+psycopg2://%s:%s@%s:5432/%s" % (
+    param_dic['user'],
+    param_dic['password'],
+    param_dic['host'],
+    param_dic['database']
+    )
 
-    # Convert list of tuples into normal list
-    results = db.execute('Select * from df').fetchall()
+    engine = create_engine(connect)
 
-    # return jsonify(result)
+    conn = engine.connect()
+    results = conn.execute('Select * from df')
 
     # Create a dictionary from the row data and append to a list of all_passengers
     all_countries = []

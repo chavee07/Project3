@@ -103,7 +103,7 @@ def ml():
 
     # Just serve up the input form
     return render_template(
-        'form.html',
+        'machinelearning.html',
         form=form,
         title='Run App',
         year=datetime.now().year,

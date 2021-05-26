@@ -59,7 +59,22 @@ body {
 .content-area p {
 	padding: 5% 50px;
 	font-family: poppins;
-	line-height: 30px;
+	line-height: 15px;
+}
+.content-area h1 {
+	font-family: poppins;
+	letter-spacing: 4px;
+	padding-top: 30px;
+	font-size: 25px;
+	margin: 0;
+}
+
+.content-area h3 {
+	font-family: poppins;
+	letter-spacing: 4px;
+	padding-top: 30px;
+	font-size: 35px;
+	margin: 0;
 }
 
 

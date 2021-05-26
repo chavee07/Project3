@@ -60,8 +60,30 @@
     <div class="content-area">
       <div class="wrapper">
           <h2>Machine Learning</h2>
+
+          {% block content %}
+          <h3>Determine if a country is happy based on its GDP and alcohol consumption.</h3>
+          <form method=post>
+         <dl>
+        
+            <h1>Consumption</h1>
+            Enter the Alcohol Consumtion <br/><br/>
+            {{form.consumption}}
+         
+            <h1>GDP</h1>
+            Enter GDP <br/><br/>
+            {{form.gdp}}
+       
+            <h1>Name the Imaginary Country (optional)</h1> 
+            You can give a name to the country you are "weighing", if you like.<br /><br />
+            {{form.text}}
+    
+        </dl>
+        <input type="submit" value="submit">
+        </form>
+        {% endblock %} 
       
-      </div>
+    </div>
 </div>
 
     <!-- </div> -->

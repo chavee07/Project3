@@ -11,6 +11,7 @@ from wtforms.widgets.core import TextInput
 from datetime import datetime
 from wtforms import Form, StringField, TextAreaField, validators
 import sqlite3
+from config import param_dic
 
 #################################################
 # Flask Setup
@@ -116,15 +117,9 @@ def names():
     # Database Setup
     #################################################
 
-
     # create params_dic
 
-    param_dic = {
-    "host"      : 'host',
-    "database"  : "database",
-    "user"      : "user",
-    "password"  : "password"
-    }
+    ####read in by config###
 
     # set up connection
     connect = "postgresql+psycopg2://%s:%s@%s:5432/%s" % (

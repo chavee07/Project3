@@ -37,7 +37,7 @@ HEADERS = {'Content-Type':'application/json', 'Authorization':('Bearer '+ BRAIN_
 @app.route('/', methods=['GET', 'POST'])
 # def root():
 #     return render_template('contact.html')
-@app.route('/home', methods=['GET', 'POST'])
+@app.route('/ML', methods=['GET', 'POST'])
 def home():
     """Renders the home page which is the CNS of the web app currently, nothing pretty."""
 

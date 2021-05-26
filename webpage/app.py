@@ -1,22 +1,17 @@
 # import dependencies
 import psycopg2
 import pprint
-from flask import Flask, request, render_template, jsonify, current_app
+from flask import Flask, request, render_template, jsonify, current_app, redirect
 import json
 from sqlalchemy import create_engine 
 import urllib.request
 import os
 from os import environ
 from wtforms.widgets.core import TextInput
-app = Flask(__name__)
-
-
 from datetime import datetime
-from flask import render_template, request, redirect
-# from FlaskAppAML import app
-#testing
-# from FlaskAppAML.forms import SubmissionForm
 from wtforms import Form, StringField, TextAreaField, validators
+import sqlite3
+
 #################################################
 # Flask Setup
 #################################################
@@ -24,6 +19,7 @@ app = Flask(__name__)
 #################################################
 # Flask Routes
 #################################################
+
 class SubmissionForm(Form):
     consumption = StringField('consumption', [validators.Length(min=1, max=10)])
     gdp = StringField('gdp', [validators.Length(min=1, max=10)])
@@ -38,7 +34,9 @@ BRAIN_URL = os.environ.get('URL', "https://ussouthcentral.services.azureml.net/w
 
 HEADERS = {'Content-Type':'application/json', 'Authorization':('Bearer '+ BRAIN_ML_KEY)}
 
-
+#################################################
+# Flask Routes
+#################################################
 @app.route("/")
 def welcome():
     """List all available api routes."""
@@ -113,28 +111,52 @@ def ml():
 
 @app.route("/landing")
 def names():
+    
     #################################################
     # Database Setup
     #################################################
+
+
     # create params_dic
+
     param_dic = {
-    "host"      : 'project3.cexcs0a519gc.us-west-1.rds.amazonaws.com',
-    "database"  : "project3",
-    "user"      : "postgres",
-    "password"  : "postgres"
+    "host"      : 'host',
+    "database"  : "database",
+    "user"      : "user",
+    "password"  : "password"
     }
+
     # set up connection
     connect = "postgresql+psycopg2://%s:%s@%s:5432/%s" % (
-    param_dic['user'],
-    param_dic['password'],
-    param_dic['host'],
-    param_dic['database']
+        param_dic['user'],
+        param_dic['password'],
+        param_dic['host'],
+        param_dic['database']
     )
+
+
     engine = create_engine(connect)
     conn = engine.connect()
     results = conn.execute('Select * from df')
+
+
+    ################################################
+    # SQLite3
+    ################################################
+    # con = sqlite3.connect("../Data/project3.sqlite")
+
+    # db = con.cursor()
+
+    # # Convert list of tuples into normal list
+    # results = db.execute('Select * from df').fetchall()
+
+    # return jsonify(results)
+
     # Create a dictionary from the row data and append to a list of all_passengers
+
     all_countries = []
+
+    # create for loop to add values to dictionary
     for country, con_code, score, gdp, social, health, freedom, generosity, corruption, alcohol, beer_servings, wine_servings, spirit_servings in results:
         countries_dict = {}
         countries_dict["Country"] = country
@@ -151,6 +173,7 @@ def names():
         countries_dict["wine_servings"] = wine_servings
         countries_dict["spirit_servings"] = beer_servings
         all_countries.append(countries_dict)
+
     return jsonify(all_countries)
 
 @app.route("/maps")

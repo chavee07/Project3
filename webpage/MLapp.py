@@ -7,6 +7,7 @@ import os
 from os import environ
 
 from flask import Flask
+from wtforms.widgets.core import TextInput
 app = Flask(__name__)
 
 
@@ -139,7 +140,7 @@ def do_something_pretty(jsondata):
     # Build a placeholder for the cluster#,distance values
     #repstr = '<tr><td>%d</td><td>%s</td></tr>' * (valuelen-1)
     # print(repstr)
-    output='For a brain with the size of : '+value[2]+ "<br/>Our Algorithm would calculate the weight to be: "+ value[4]
+    output='For an alcohol consumption of : '+value[1]+ "<br/>And a Gdp of: "+ value[0] + "<br/>Our Algorithm would calculate your country to be Happy: "+ value[2] + "with a weight of " + value[4]
     # Build the entire html table for the results data representation
     #tablestr = 'Cluster assignment: %s<br><br><table border="1"><tr><th>Cluster</th><th>Distance From Center</th></tr>'+ repstr + "</table>"
     #return tablestr % data

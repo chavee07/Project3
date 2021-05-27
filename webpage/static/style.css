@@ -57,9 +57,10 @@ body {
 	margin: 0;
 }
 .content-area p {
-	padding: 5% 15px;
+	padding: 5%;
 	font-family: poppins;
 	line-height: 15px;
+	margin: 15px;
 }
 .content-area h1 {
 	font-family: poppins;

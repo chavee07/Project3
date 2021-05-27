@@ -84,7 +84,7 @@ def ml():
             #print(response)
             respdata = response.read()
             result = json.loads(str(respdata, 'utf-8'))
-            result = do_something_pretty(result)
+            result = do_something_pretty(result, form.text.data)
             # result = json.dumps(result, indent=4, sort_keys=True)
             return render_template(
                 'result.html',
@@ -184,7 +184,7 @@ def gauge():
 def scatter():
     return render_template('scatterplot.html')
 
-def do_something_pretty(jsondata):
+def do_something_pretty(jsondata,name):
     """We want to process the AML json result to be more human readable and understandable"""
     import itertools # for flattening a list of tuples below
 
@@ -197,14 +197,13 @@ def do_something_pretty(jsondata):
     # valuetuple = list(zip(range(valuelen-1), value[1:(valuelen)]))
     # Convert the list of tuples to one long list (flatten it)
     # valuelist = list(itertools.chain(*valuetuple))
-
     # Convert to a tuple for the list
     # data = tuple(list(value[0]) + valuelist)
 
     # Build a placeholder for the cluster#,distance values
     #repstr = '<tr><td>%d</td><td>%s</td></tr>' * (valuelen-1)
     # print(repstr)
-    output= 'For an alcohol consumption of : ' +value[1]+ '<br/>And a GDP per Capita of: ' + value[0]+ '<br/>The chance your county would be conisidered unhappy: ' + value[4] 
+    output= 'With an alcohol consumption of : ' +value[1]+ '<br/>And a GDP per Capita of: ' + value[0]+ '<br/>The chance ' +name + 's' +' would be conisidered unhappy: ' + value[4] 
     # Build the entire html table for the results data representation
     #tablestr = 'Cluster assignment: %s<br><br><table border="1"><tr><th>Cluster</th><th>Distance From Center</th></tr>'+ repstr + "</table>"
     #return tablestr % data

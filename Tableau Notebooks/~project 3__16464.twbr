@@ -1,0 +1,2044 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20211.21.0420.1112                               -->
+<workbook source-build='2021.1.1 (20211.21.0420.1112)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <_.fcp.SetMembershipControl.true...SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='interactivescatter' path='/workbooks' revision='1.5' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column alias='Happiness Score' caption='Factors of Happiness' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Score&quot;'>
+        <calculation class='tableau' formula='&quot;Score&quot;' />
+        <aliases>
+          <alias key='&quot;Alcohol Consumption&quot;' value='Pure Alc./Liter' />
+          <alias key='&quot;Corruption&quot;' value='Perception of Corruption' />
+          <alias key='&quot;Freedom&quot;' value='Perception of Freedom' />
+          <alias key='&quot;GDP&quot;' value='GDP/Capita' />
+          <alias key='&quot;Life_Expectancy_Years&quot;' value='Life Expectancy' />
+          <alias key='&quot;Score&quot;' value='Happiness Score' />
+          <alias key='&quot;Social&quot;' value='Social Support' />
+        </aliases>
+        <members>
+          <member alias='Pure Alc./Liter' value='&quot;Alcohol Consumption&quot;' />
+          <member alias='Perception of Corruption' value='&quot;Corruption&quot;' />
+          <member alias='Perception of Freedom' value='&quot;Freedom&quot;' />
+          <member alias='GDP/Capita' value='&quot;GDP&quot;' />
+          <member value='&quot;Generosity&quot;' />
+          <member alias='Life Expectancy' value='&quot;Life_Expectancy_Years&quot;' />
+          <member alias='Happiness Score' value='&quot;Score&quot;' />
+          <member alias='Social Support' value='&quot;Social&quot;' />
+        </members>
+      </column>
+      <column alias='Pure Alc. Liter' caption='Alcohol Consumption/Capita' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Alcohol Consumption&quot;'>
+        <calculation class='tableau' formula='&quot;Alcohol Consumption&quot;' />
+        <aliases>
+          <alias key='&quot;Alcohol Consumption&quot;' value='Pure Alc. Liter' />
+          <alias key='&quot;Beer Servings&quot;' value='Beer' />
+          <alias key='&quot;Spirit Servings&quot;' value='Spirit' />
+          <alias key='&quot;Wine Servings&quot;' value='Wine' />
+        </aliases>
+        <members>
+          <member alias='Pure Alc. Liter' value='&quot;Alcohol Consumption&quot;' />
+          <member alias='Beer' value='&quot;Beer Servings&quot;' />
+          <member alias='Wine' value='&quot;Wine Servings&quot;' />
+          <member alias='Spirit' value='&quot;Spirit Servings&quot;' />
+        </members>
+      </column>
+      <column alias='Pure Alc./Liter' caption='Score/Alcohol' datatype='string' name='[Variables (copy)_902408822342832130]' param-domain-type='list' role='measure' type='nominal' value='&quot;Alcohol Consumption&quot;'>
+        <calculation class='tableau' formula='&quot;Alcohol Consumption&quot;' />
+        <aliases>
+          <alias key='&quot;Alcohol Consumption&quot;' value='Pure Alc./Liter' />
+          <alias key='&quot;Score&quot;' value='Happiness Score' />
+        </aliases>
+        <members>
+          <member alias='Pure Alc./Liter' value='&quot;Alcohol Consumption&quot;' />
+          <member alias='Happiness Score' value='&quot;Score&quot;' />
+          <member value='&quot;Beer Servings&quot;' />
+          <member value='&quot;Wine Servings&quot;' />
+          <member value='&quot;Spirit Servings&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='df' inline='true' name='federated.1l4ebne1a5c54612l4jyt1kq51vc' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='df' name='textscan.0o76jqw11qjz9k11ff3yh1bjucmm'>
+            <connection class='textscan' directory='C:/Users/joanc/DataClass/Project 3/Project3/Data' filename='df.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0o76jqw11qjz9k11ff3yh1bjucmm' name='df.csv' table='[df#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Country' ordinal='0' />
+            <column datatype='string' name='con_code' ordinal='1' />
+            <column datatype='real' name='Score' ordinal='2' />
+            <column datatype='real' name='GDP' ordinal='3' />
+            <column datatype='real' name='social' ordinal='4' />
+            <column datatype='real' name='life_expectancy' ordinal='5' />
+            <column datatype='real' name='freedom' ordinal='6' />
+            <column datatype='real' name='Generosity' ordinal='7' />
+            <column datatype='real' name='corruption' ordinal='8' />
+            <column datatype='real' name='alcohol_consumption' ordinal='9' />
+            <column datatype='integer' name='beer_servings' ordinal='10' />
+            <column datatype='integer' name='spirit_servings' ordinal='11' />
+            <column datatype='integer' name='wine_servings' ordinal='12' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0o76jqw11qjz9k11ff3yh1bjucmm' name='df.csv' table='[df#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Country' ordinal='0' />
+            <column datatype='string' name='con_code' ordinal='1' />
+            <column datatype='real' name='Score' ordinal='2' />
+            <column datatype='real' name='GDP' ordinal='3' />
+            <column datatype='real' name='social' ordinal='4' />
+            <column datatype='real' name='life_expectancy' ordinal='5' />
+            <column datatype='real' name='freedom' ordinal='6' />
+            <column datatype='real' name='Generosity' ordinal='7' />
+            <column datatype='real' name='corruption' ordinal='8' />
+            <column datatype='real' name='alcohol_consumption' ordinal='9' />
+            <column datatype='integer' name='beer_servings' ordinal='10' />
+            <column datatype='integer' name='spirit_servings' ordinal='11' />
+            <column datatype='integer' name='wine_servings' ordinal='12' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df.csv_18A2BC7DC8424E9682B68944B591D4ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>con_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[con_code]</local-name>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias>con_code</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df.csv_18A2BC7DC8424E9682B68944B591D4ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Score]</local-name>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias>Score</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df.csv_18A2BC7DC8424E9682B68944B591D4ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GDP</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[GDP]</local-name>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias>GDP</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df.csv_18A2BC7DC8424E9682B68944B591D4ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>social</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[social]</local-name>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias>social</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df.csv_18A2BC7DC8424E9682B68944B591D4ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>life_expectancy</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[life_expectancy]</local-name>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias>life_expectancy</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df.csv_18A2BC7DC8424E9682B68944B591D4ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>freedom</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[freedom]</local-name>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias>freedom</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df.csv_18A2BC7DC8424E9682B68944B591D4ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Generosity</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Generosity]</local-name>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias>Generosity</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df.csv_18A2BC7DC8424E9682B68944B591D4ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>corruption</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[corruption]</local-name>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias>corruption</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df.csv_18A2BC7DC8424E9682B68944B591D4ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>alcohol_consumption</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[alcohol_consumption]</local-name>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias>alcohol_consumption</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df.csv_18A2BC7DC8424E9682B68944B591D4ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>beer_servings</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[beer_servings]</local-name>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias>beer_servings</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df.csv_18A2BC7DC8424E9682B68944B591D4ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>spirit_servings</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[spirit_servings]</local-name>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias>spirit_servings</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df.csv_18A2BC7DC8424E9682B68944B591D4ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>wine_servings</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[wine_servings]</local-name>
+            <parent-name>[df.csv]</parent-name>
+            <remote-alias>wine_servings</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df.csv_18A2BC7DC8424E9682B68944B591D4ED]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:alcohol_consumption:qk]&quot;' value='Alcohol' />
+        </aliases>
+      </column>
+      <column caption='Factors' datatype='real' name='[Calculation_902408822341435392]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CASE [Parameters].[Parameter 1]&#13;&#10;WHEN &quot;Alcohol Consumption&quot; THEN [alcohol_consumption]&#13;&#10;WHEN &quot;Score&quot; THEN [Score]&#13;&#10;WHEN &quot;GDP&quot; THEN [GDP]&#13;&#10;WHEN &quot;Social&quot; THEN [social]&#13;&#10;WHEN &quot;Generosity&quot; THEN [Generosity]&#13;&#10;WHEN &quot;Freedom&quot; THEN [freedom]&#13;&#10;WHEN &quot;Corruption&quot; THEN [corruption]&#13;&#10;WHEN &quot;Life_Expectancy_Years&quot; THEN [Calculation_902408822341632001]&#13;&#10;&#13;&#10;END' />
+      </column>
+      <column caption='Life_Expectancy_Years' datatype='real' name='[Calculation_902408822341632001]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[life_expectancy]*100' />
+      </column>
+      <column caption='Score/Consumption' datatype='real' name='[Calculation_902408822343163907]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CASE [Parameters].[Variables (copy)_902408822342832130]&#13;&#10;WHEN &quot;Alcohol Consumption&quot; THEN [alcohol_consumption]&#13;&#10;WHEN &quot;Score&quot; THEN [Score]&#13;&#10;WHEN &quot;Beer Servings&quot; THEN [beer_servings]&#13;&#10;WHEN &quot;Wine Servings&quot; THEN [wine_servings]&#13;&#10;WHEN &quot;Spirit Servings&quot; THEN [spirit_servings]&#13;&#10;&#13;&#10;END' />
+      </column>
+      <column caption='consumption detail' datatype='real' name='[Calculation_902408822343553028]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CASE [Parameters].[Parameter 2]&#13;&#10;WHEN &quot;Alcohol Consumption&quot; THEN [alcohol_consumption]&#13;&#10;WHEN &quot;Score&quot; THEN [Score]&#13;&#10;WHEN &quot;Beer Servings&quot; THEN [beer_servings]&#13;&#10;WHEN &quot;Wine Servings&quot; THEN [wine_servings]&#13;&#10;WHEN &quot;Spirit Servings&quot; THEN [spirit_servings]&#13;&#10;END' />
+      </column>
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='real' name='[Score]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='df.csv' datatype='table' name='[__tableau_internal_object_id__].[df.csv_18A2BC7DC8424E9682B68944B591D4ED]' role='measure' type='quantitative' />
+      <column caption='Alcohol Consumption' datatype='real' name='[alcohol_consumption]' role='measure' type='quantitative' />
+      <column caption='Beer Servings' datatype='integer' name='[beer_servings]' role='measure' type='quantitative' />
+      <column caption='Con Code' datatype='string' name='[con_code]' role='dimension' type='nominal' />
+      <column caption='Corruption' datatype='real' name='[corruption]' role='measure' type='quantitative' />
+      <column caption='Freedom' datatype='real' name='[freedom]' role='measure' type='quantitative' />
+      <column caption='Life Expectancy' datatype='real' name='[life_expectancy]' role='measure' type='quantitative' />
+      <column caption='Social' datatype='real' name='[social]' role='measure' type='quantitative' />
+      <column caption='Spirit Servings' datatype='integer' name='[spirit_servings]' role='measure' type='quantitative' />
+      <column caption='Wine Servings' datatype='integer' name='[wine_servings]' role='measure' type='quantitative' />
+      <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Score]' derivation='Sum' name='[sum:Score:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[alcohol_consumption]' derivation='Sum' name='[sum:alcohol_consumption:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/joanc/OneDrive/Documents/My Tableau Repository/Datasources/df.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Country</remote-alias>
+              <ordinal>0</ordinal>
+              <family>df.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>131</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>con_code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[con_code]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>con_code</remote-alias>
+              <ordinal>1</ordinal>
+              <family>df.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>131</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Score</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Score]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Score</remote-alias>
+              <ordinal>2</ordinal>
+              <family>df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>129</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>GDP</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[GDP]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>GDP</remote-alias>
+              <ordinal>3</ordinal>
+              <family>df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>131</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>social</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[social]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>social</remote-alias>
+              <ordinal>4</ordinal>
+              <family>df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>121</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>life_expectancy</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[life_expectancy]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>life_expectancy</remote-alias>
+              <ordinal>5</ordinal>
+              <family>df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>123</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>freedom</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[freedom]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>freedom</remote-alias>
+              <ordinal>6</ordinal>
+              <family>df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>117</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Generosity</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Generosity]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Generosity</remote-alias>
+              <ordinal>7</ordinal>
+              <family>df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>107</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>corruption</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[corruption]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>corruption</remote-alias>
+              <ordinal>8</ordinal>
+              <family>df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>101</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>alcohol_consumption</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[alcohol_consumption]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>alcohol_consumption</remote-alias>
+              <ordinal>9</ordinal>
+              <family>df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>125</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>beer_servings</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[beer_servings]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>beer_servings</remote-alias>
+              <ordinal>10</ordinal>
+              <family>df.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>99</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>spirit_servings</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[spirit_servings]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>spirit_servings</remote-alias>
+              <ordinal>11</ordinal>
+              <family>df.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>83</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>wine_servings</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[wine_servings]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>wine_servings</remote-alias>
+              <ordinal>12</ordinal>
+              <family>df.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>63</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.714909' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.285091' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[sum:Score:ok]' type='palette'>
+            <map to='#499894'>
+              <bucket>3.5899999999999999</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>4.4100000000000001</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>5.093</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>5.5659999999999998</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>6.0720000000000001</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>6.4889999999999999</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>7.6319999999999997</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>4.1900000000000004</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>4.6310000000000002</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>5.3469999999999995</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>5.915</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>6.3739999999999997</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>7.3140000000000001</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>710.29400000000044</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>3.4079999999999999</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>4.3399999999999999</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>4.8799999999999999</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>5.4719999999999995</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>5.952</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>6.4189999999999996</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>7.4870000000000001</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>3.7949999999999999</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>4.4409999999999998</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>5.1609999999999996</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>5.6630000000000003</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>6.1230000000000002</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>6.9100000000000001</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>3.6320000000000001</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>4.4169999999999998</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>5.1029999999999998</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>5.6200000000000001</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>6.0830000000000002</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>6.6269999999999998</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>3.4950000000000001</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>4.3499999999999996</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>4.9329999999999998</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>5.4829999999999997</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>5.9559999999999995</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>6.4299999999999997</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>7.4950000000000001</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>4.141</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>4.5860000000000003</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>5.3019999999999996</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>5.8899999999999997</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>6.343</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>7.1900000000000004</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>2.9050000000000002</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>4.3010000000000002</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>4.657</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>5.3579999999999997</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>5.9329999999999998</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>6.3789999999999996</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>7.3239999999999998</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>4.1029999999999998</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>4.5</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>5.2539999999999996</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>5.7620000000000005</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>6.3099999999999996</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>7.0720000000000001</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>3.5819999999999999</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>4.3559999999999999</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>4.9749999999999996</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>5.5039999999999996</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>5.9729999999999999</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>6.476</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>7.5549999999999997</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>3.8079999999999998</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>4.4470000000000001</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>5.1989999999999998</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>5.681</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>6.141</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>6.9269999999999996</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>3.964</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>4.4560000000000004</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>5.2009999999999996</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>5.7389999999999999</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>6.1669999999999998</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>6.9649999999999999</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>4.1390000000000002</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>4.5709999999999997</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>5.2949999999999999</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>5.79</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>6.3220000000000001</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>7.1390000000000002</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>4.1609999999999996</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>4.1660000000000004</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>4.5919999999999996</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>5.3209999999999997</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>5.891</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>6.3710000000000004</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>7.2720000000000002</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>3.6920000000000002</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>4.4240000000000004</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>5.125</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>5.6360000000000001</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>6.0960000000000001</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>6.7110000000000003</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>3.5869999999999997</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>4.3769999999999998</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>5.0819999999999999</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>5.524</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>6.0</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>6.4879999999999995</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>7.5940000000000003</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>3.0830000000000002</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>4.3079999999999998</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>4.7240000000000002</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>5.3979999999999997</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>5.9450000000000003</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>6.3819999999999997</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>7.3280000000000003</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>3.9990000000000001</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>4.4710000000000001</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>5.2460000000000004</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>5.7519999999999998</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>6.2599999999999998</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>6.9770000000000003</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>3.774</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>4.4329999999999998</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>5.1550000000000002</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>5.6399999999999997</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>6.1050000000000004</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>6.8140000000000001</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>3.3029999999999999</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>4.3209999999999997</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>4.758</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>5.4100000000000001</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>5.9480000000000004</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>6.3879999999999999</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>7.4409999999999998</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Country:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Azerbaijan&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;China&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Guinea&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Liberia&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Netherlands&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Singapore&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Vietnam&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Afghanistan&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Burkina Faso&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Finland&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Japan&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Moldova&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Portugal&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Tunisia&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Argentina&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Canada&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Germany&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Kuwait&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Mozambique&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Saudi Arabia&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Ukraine&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Belgium&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Cyprus&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Iceland&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Madagascar&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Nigeria&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Sri Lanka&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Bahrain&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Colombia&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Haiti&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Libya&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;New Zealand&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Slovenia&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Zambia&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Armenia&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Central African Republic&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Ghana&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Latvia&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Myanmar&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Senegal&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;United Kingdom&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Brazil&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Estonia&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Italy&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Mauritius&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Philippines&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Thailand&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Albania&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Burundi&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;France&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Jordan&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Mongolia&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Qatar&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Turkey&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Bolivia&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Ecuador&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Ireland&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Malta&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Paraguay&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Tajikistan&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Australia&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Chad&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Greece&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Lebanon&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Namibia&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Serbia&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Uruguay&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Belize&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Czech Republic&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;India&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Malawi&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Norway&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Sudan&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Benin&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Denmark&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Indonesia&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Malaysia&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Pakistan&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Sweden&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Botswana&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;El Salvador&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Israel&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Mauritania&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Peru&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Tanzania&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Bulgaria&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Ethiopia&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Jamaica&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Mexico&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Poland&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Togo&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Bangladesh&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Costa Rica&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Honduras&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Lithuania&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Nicaragua&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;South Africa&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Zimbabwe&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Austria&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Chile&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Guatemala&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Lesotho&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Nepal&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Sierra Leone&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Uzbekistan&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Algeria&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Cambodia&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Gabon&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Kazakhstan&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Montenegro&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Romania&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Turkmenistan&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Bhutan&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Dominican Republic&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Iraq&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Mali&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Panama&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Switzerland&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Belarus&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Croatia&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Hungary&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Luxembourg&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Niger&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Spain&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Angola&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Cameroon&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Georgia&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Kenya&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Morocco&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Rwanda&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Uganda&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Happiness Score' caption='Factors of Happiness' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Score&quot;'>
+          <calculation class='tableau' formula='&quot;Score&quot;' />
+          <aliases>
+            <alias key='&quot;Alcohol Consumption&quot;' value='Pure Alc./Liter' />
+            <alias key='&quot;Corruption&quot;' value='Perception of Corruption' />
+            <alias key='&quot;Freedom&quot;' value='Perception of Freedom' />
+            <alias key='&quot;GDP&quot;' value='GDP/Capita' />
+            <alias key='&quot;Life_Expectancy_Years&quot;' value='Life Expectancy' />
+            <alias key='&quot;Score&quot;' value='Happiness Score' />
+            <alias key='&quot;Social&quot;' value='Social Support' />
+          </aliases>
+        </column>
+        <column alias='Pure Alc. Liter' caption='Alcohol Consumption/Capita' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Alcohol Consumption&quot;'>
+          <calculation class='tableau' formula='&quot;Alcohol Consumption&quot;' />
+          <aliases>
+            <alias key='&quot;Alcohol Consumption&quot;' value='Pure Alc. Liter' />
+            <alias key='&quot;Beer Servings&quot;' value='Beer' />
+            <alias key='&quot;Spirit Servings&quot;' value='Spirit' />
+            <alias key='&quot;Wine Servings&quot;' value='Wine' />
+          </aliases>
+        </column>
+        <column alias='Pure Alc./Liter' caption='Score/Alcohol' datatype='string' name='[Variables (copy)_902408822342832130]' param-domain-type='list' role='measure' type='nominal' value='&quot;Alcohol Consumption&quot;'>
+          <calculation class='tableau' formula='&quot;Alcohol Consumption&quot;' />
+          <aliases>
+            <alias key='&quot;Alcohol Consumption&quot;' value='Pure Alc./Liter' />
+            <alias key='&quot;Score&quot;' value='Happiness Score' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='df.csv' id='df.csv_18A2BC7DC8424E9682B68944B591D4ED'>
+            <properties context=''>
+              <relation connection='textscan.0o76jqw11qjz9k11ff3yh1bjucmm' name='df.csv' table='[df#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='Country' ordinal='0' />
+                  <column datatype='string' name='con_code' ordinal='1' />
+                  <column datatype='real' name='Score' ordinal='2' />
+                  <column datatype='real' name='GDP' ordinal='3' />
+                  <column datatype='real' name='social' ordinal='4' />
+                  <column datatype='real' name='life_expectancy' ordinal='5' />
+                  <column datatype='real' name='freedom' ordinal='6' />
+                  <column datatype='real' name='Generosity' ordinal='7' />
+                  <column datatype='real' name='corruption' ordinal='8' />
+                  <column datatype='real' name='alcohol_consumption' ordinal='9' />
+                  <column datatype='integer' name='beer_servings' ordinal='10' />
+                  <column datatype='integer' name='spirit_servings' ordinal='11' />
+                  <column datatype='integer' name='wine_servings' ordinal='12' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='happy'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>happiness score above 7</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df' name='federated.1l4ebne1a5c54612l4jyt1kq51vc' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1l4ebne1a5c54612l4jyt1kq51vc'>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='real' name='[Score]' role='measure' type='quantitative' />
+            <column caption='Alcohol Consumption' datatype='real' name='[alcohol_consumption]' role='measure' type='quantitative' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Score]' derivation='Sum' name='[sum:Score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[alcohol_consumption]' derivation='Sum' name='[sum:alcohol_consumption:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:alcohol_consumption:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='quantitative' column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]' included-values='in-range'>
+            <min>7.0</min>
+            <max>7.6319999999999997</max>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1l4ebne1a5c54612l4jyt1kq51vc].[:Measure Names]</column>
+            <column>[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk] / [federated.1l4ebne1a5c54612l4jyt1kq51vc].[:Measure Names])</rows>
+        <cols>[federated.1l4ebne1a5c54612l4jyt1kq51vc].[Multiple Values]</cols>
+      </table>
+      <simple-id uuid='{76E1DF1E-B861-44CD-9211-899FECAC9CD3}' />
+    </worksheet>
+    <worksheet name='multi-bar'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>world rankings</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df' name='federated.1l4ebne1a5c54612l4jyt1kq51vc' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1l4ebne1a5c54612l4jyt1kq51vc'>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='real' name='[Score]' role='measure' type='quantitative' />
+            <column caption='Alcohol Consumption' datatype='real' name='[alcohol_consumption]' role='measure' type='quantitative' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Score]' derivation='Sum' name='[sum:Score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[alcohol_consumption]' derivation='Sum' name='[sum:alcohol_consumption:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:alcohol_consumption:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:alcohol_consumption:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <computed-sort column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]' direction='DESC' using='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]' />
+          <slices>
+            <column>[federated.1l4ebne1a5c54612l4jyt1kq51vc].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk] / [federated.1l4ebne1a5c54612l4jyt1kq51vc].[:Measure Names])</rows>
+        <cols>[federated.1l4ebne1a5c54612l4jyt1kq51vc].[Multiple Values]</cols>
+      </table>
+      <simple-id uuid='{38192BB1-C3C3-4DE2-910B-EF3B4DAF9188}' />
+    </worksheet>
+    <worksheet name='sad'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>happiness score below 4</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df' name='federated.1l4ebne1a5c54612l4jyt1kq51vc' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1l4ebne1a5c54612l4jyt1kq51vc'>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='real' name='[Score]' role='measure' type='quantitative' />
+            <column caption='Alcohol Consumption' datatype='real' name='[alcohol_consumption]' role='measure' type='quantitative' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Score]' derivation='Sum' name='[sum:Score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[alcohol_consumption]' derivation='Sum' name='[sum:alcohol_consumption:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:alcohol_consumption:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='quantitative' column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]' included-values='in-range'>
+            <min>0.0</min>
+            <max>4.0</max>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1l4ebne1a5c54612l4jyt1kq51vc].[:Measure Names]</column>
+            <column>[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk] / [federated.1l4ebne1a5c54612l4jyt1kq51vc].[:Measure Names])</rows>
+        <cols>[federated.1l4ebne1a5c54612l4jyt1kq51vc].[Multiple Values]</cols>
+      </table>
+      <simple-id uuid='{87785264-F2B4-405B-A7E7-9302E20A9DCD}' />
+    </worksheet>
+    <worksheet name='scatterplot'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df' name='federated.1l4ebne1a5c54612l4jyt1kq51vc' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Happiness Score' caption='Factors of Happiness' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Score&quot;'>
+              <calculation class='tableau' formula='&quot;Score&quot;' />
+              <aliases>
+                <alias key='&quot;Alcohol Consumption&quot;' value='Pure Alc./Liter' />
+                <alias key='&quot;Corruption&quot;' value='Perception of Corruption' />
+                <alias key='&quot;Freedom&quot;' value='Perception of Freedom' />
+                <alias key='&quot;GDP&quot;' value='GDP/Capita' />
+                <alias key='&quot;Life_Expectancy_Years&quot;' value='Life Expectancy' />
+                <alias key='&quot;Score&quot;' value='Happiness Score' />
+                <alias key='&quot;Social&quot;' value='Social Support' />
+              </aliases>
+            </column>
+            <column alias='Pure Alc./Liter' caption='Score/Alcohol' datatype='string' name='[Variables (copy)_902408822342832130]' param-domain-type='list' role='measure' type='nominal' value='&quot;Alcohol Consumption&quot;'>
+              <calculation class='tableau' formula='&quot;Alcohol Consumption&quot;' />
+              <aliases>
+                <alias key='&quot;Alcohol Consumption&quot;' value='Pure Alc./Liter' />
+                <alias key='&quot;Score&quot;' value='Happiness Score' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1l4ebne1a5c54612l4jyt1kq51vc'>
+            <column caption='Factors' datatype='real' name='[Calculation_902408822341435392]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 1]&#13;&#10;WHEN &quot;Alcohol Consumption&quot; THEN [alcohol_consumption]&#13;&#10;WHEN &quot;Score&quot; THEN [Score]&#13;&#10;WHEN &quot;GDP&quot; THEN [GDP]&#13;&#10;WHEN &quot;Social&quot; THEN [social]&#13;&#10;WHEN &quot;Generosity&quot; THEN [Generosity]&#13;&#10;WHEN &quot;Freedom&quot; THEN [freedom]&#13;&#10;WHEN &quot;Corruption&quot; THEN [corruption]&#13;&#10;WHEN &quot;Life_Expectancy_Years&quot; THEN [Calculation_902408822341632001]&#13;&#10;&#13;&#10;END' />
+            </column>
+            <column caption='Life_Expectancy_Years' datatype='real' name='[Calculation_902408822341632001]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[life_expectancy]*100' />
+            </column>
+            <column caption='Score/Consumption' datatype='real' name='[Calculation_902408822343163907]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Variables (copy)_902408822342832130]&#13;&#10;WHEN &quot;Alcohol Consumption&quot; THEN [alcohol_consumption]&#13;&#10;WHEN &quot;Score&quot; THEN [Score]&#13;&#10;WHEN &quot;Beer Servings&quot; THEN [beer_servings]&#13;&#10;WHEN &quot;Wine Servings&quot; THEN [wine_servings]&#13;&#10;WHEN &quot;Spirit Servings&quot; THEN [spirit_servings]&#13;&#10;&#13;&#10;END' />
+            </column>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='real' name='[GDP]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Generosity]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Score]' role='measure' type='quantitative' />
+            <column caption='Alcohol Consumption' datatype='real' name='[alcohol_consumption]' role='measure' type='quantitative' />
+            <column caption='Beer Servings' datatype='integer' name='[beer_servings]' role='measure' type='quantitative' />
+            <column caption='Corruption' datatype='real' name='[corruption]' role='measure' type='quantitative' />
+            <column caption='Freedom' datatype='real' name='[freedom]' role='measure' type='quantitative' />
+            <column caption='Life Expectancy' datatype='real' name='[life_expectancy]' role='measure' type='quantitative' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column caption='Social' datatype='real' name='[social]' role='measure' type='quantitative' />
+            <column caption='Spirit Servings' datatype='integer' name='[spirit_servings]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_902408822341435392]' derivation='Sum' name='[sum:Calculation_902408822341435392:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_902408822341632001]' derivation='Sum' name='[sum:Calculation_902408822341632001:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_902408822343163907]' derivation='Sum' name='[sum:Calculation_902408822343163907:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[GDP]' derivation='Sum' name='[sum:GDP:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Generosity]' derivation='Sum' name='[sum:Generosity:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Score]' derivation='Sum' name='[sum:Score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[alcohol_consumption]' derivation='Sum' name='[sum:alcohol_consumption:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[beer_servings]' derivation='Sum' name='[sum:beer_servings:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[corruption]' derivation='Sum' name='[sum:corruption:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[freedom]' derivation='Sum' name='[sum:freedom:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[social]' derivation='Sum' name='[sum:social:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[spirit_servings]' derivation='Sum' name='[sum:spirit_servings:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[wine_servings]' derivation='Sum' name='[sum:wine_servings:qk]' pivot='key' type='quantitative' />
+            <column caption='Wine Servings' datatype='integer' name='[wine_servings]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Calculation_902408822341435392:qk]' scope='cols' value='Factors of Happiness' />
+            <format attr='auto-subtitle' class='0' field='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Calculation_902408822341435392:qk]' scope='cols' value='false' />
+            <format attr='subtitle' class='0' field='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Calculation_902408822341435392:qk]' scope='cols' value='as selected by user' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]' />
+              <size column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Calculation_902408822343163907:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:alcohol_consumption:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:beer_servings:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Calculation_902408822341435392:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:corruption:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:freedom:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:GDP:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Generosity:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Calculation_902408822341632001:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:social:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:spirit_servings:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:wine_servings:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Country:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Score or Alcohol Consumption:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Calculation_902408822343163907:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'><![CDATA[Variable:	<[Parameters].[Parameter 1]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Value:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Calculation_902408822343163907:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='3.6574585437774658' />
+                <format attr='shape' value=':filled/circle' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Calculation_902408822343163907:qk]</rows>
+        <cols>[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Calculation_902408822341435392:qk]</cols>
+      </table>
+      <simple-id uuid='{0CF25B42-93E8-4524-B9BB-4C8E35C1EFFA}' />
+    </worksheet>
+    <worksheet name='world map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df' name='federated.1l4ebne1a5c54612l4jyt1kq51vc' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1l4ebne1a5c54612l4jyt1kq51vc'>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='real' name='[GDP]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Score]' role='measure' type='quantitative' />
+            <column caption='Alcohol Consumption' datatype='real' name='[alcohol_consumption]' role='measure' type='quantitative' />
+            <column caption='Beer Servings' datatype='integer' name='[beer_servings]' role='measure' type='quantitative' />
+            <column caption='Corruption' datatype='real' name='[corruption]' role='measure' type='quantitative' />
+            <column caption='Freedom' datatype='real' name='[freedom]' role='measure' type='quantitative' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column caption='Social' datatype='real' name='[social]' role='measure' type='quantitative' />
+            <column caption='Spirit Servings' datatype='integer' name='[spirit_servings]' role='measure' type='quantitative' />
+            <column-instance column='[GDP]' derivation='Sum' name='[sum:GDP:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Score]' derivation='Sum' name='[sum:Score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[alcohol_consumption]' derivation='Sum' name='[sum:alcohol_consumption:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[beer_servings]' derivation='Sum' name='[sum:beer_servings:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[corruption]' derivation='Sum' name='[sum:corruption:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[freedom]' derivation='Sum' name='[sum:freedom:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[social]' derivation='Sum' name='[sum:social:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[spirit_servings]' derivation='Sum' name='[sum:spirit_servings:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[wine_servings]' derivation='Sum' name='[sum:wine_servings:qk]' pivot='key' type='quantitative' />
+            <column caption='Wine Servings' datatype='integer' name='[wine_servings]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[Longitude (generated)]' field-type='quantitative' max='59421032.976613112' min='20837053.635787621' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[Latitude (generated)]' field-type='quantitative' max='20883857.311802745' min='-17268112.132314317' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#d3dbe2</color>
+                <color>#b7c6d4</color>
+                <color>#9eb2c5</color>
+                <color>#869fb7</color>
+                <color>#708da9</color>
+                <color>#5c7b9a</color>
+                <color>#4a6b8c</color>
+                <color>#3a5c7d</color>
+                <color>#2c4e6f</color>
+                <color>#204161</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]' value='Happiness Score Scale:'>
+              <formatted-text>
+                <run>Happiness Score Scale:</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]' />
+              <lod column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:GDP:qk]' />
+              <lod column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:social:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:spirit_servings:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:wine_servings:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:corruption:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:freedom:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:alcohol_consumption:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:beer_servings:qk]' />
+              <tooltip column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:GDP:qk]' />
+              <geometry column='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[Geometry (generated)]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Country:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Happiness Score:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Pure Alcohol/Liter:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:alcohol_consumption:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>* Beer Servings:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:beer_servings:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>* Spirit Servings:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:spirit_servings:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>* Wine Servings:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:wine_servings:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Corruption:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:corruption:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Freedom:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:freedom:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>GDP:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:GDP:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Social:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:social:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.1l4ebne1a5c54612l4jyt1kq51vc].[Latitude (generated)]</rows>
+        <cols>[federated.1l4ebne1a5c54612l4jyt1kq51vc].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{19C40268-23F4-40D8-B61E-5104D00C9FAE}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='4' w='100000' x='0' y='0'>
+          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='7' param='horz' w='98400' x='800' y='1000'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='98000' id='5' w='98400' x='800' y='1000'>
+              <zone h='98000' id='3' name='multi-bar' w='49200' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='9' name='happy' w='49200' x='50000' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='10' name='sad' w='49200' x='50000' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='900' minheight='900' sizing-mode='vscroll' />
+          <zones>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='34' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='33' param='vert' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='multi-bar' w='49200' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='9' is-fixed='true' name='happy' w='49200' x='50000' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='10' is-fixed='true' name='sad' w='49200' x='50000' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{8DF616D9-3E1A-47F7-952A-CD3D310AB6B8}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='44'>
+    <window class='worksheet' name='world map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[sum:Score:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
+      <simple-id uuid='{CB43312E-C3A9-481C-B6D3-4B75B2EF4D11}' />
+    </window>
+    <window class='worksheet' maximized='true' name='scatterplot'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Variables (copy)_902408822342832130]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='2' param='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E79FE44C-07A8-4FF5-A65D-2D3F2C7DD22D}' />
+    </window>
+    <window class='worksheet' name='multi-bar'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FF492298-A206-40E9-B96D-924F334B9AAE}' />
+    </window>
+    <window class='worksheet' name='happy'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{15E05E5F-1616-42ED-A8DA-5D34CC8BA296}' />
+    </window>
+    <window class='worksheet' name='sad'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.1l4ebne1a5c54612l4jyt1kq51vc].[none:Country:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8FC5AD17-39F7-4678-A895-93C5C4E1E30F}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='happy' />
+        <viewpoint name='multi-bar' />
+        <viewpoint name='sad' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{5C573006-DD24-44FF-921A-AA1D2B6865E2}' />
+    </window>
+  </windows>
+</workbook>

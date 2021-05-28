@@ -166,7 +166,7 @@ def names():
         countries_dict["Alcohol Consumption per Capita (liter)"] = alcohol
         countries_dict["beer_servings"] = beer_servings
         countries_dict["wine_servings"] = wine_servings
-        countries_dict["spirit_servings"] = beer_servings
+        countries_dict["spirit_servings"] = spirit_servings
         all_countries.append(countries_dict)
 
     return jsonify(all_countries)

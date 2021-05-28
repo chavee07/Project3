@@ -60,8 +60,8 @@ def ml():
         data =  {
               "Inputs": {
                 "input1": {
-                 "ColumnNames": ["GDP per capita", "Alcohol Consumption per Capita (liter)", "equal_or_lower_than_5.41?"],
-                 "Values": [[form.gdp.data.lower(), form.consumption.data.lower(),0 ]]
+                 "ColumnNames": ["GDP", "alcohol_consumption", "equal_or_greater_than_5.41?"],
+                 "Values": [[form.gdp.data.lower(), form.consumption.data.lower(),1]]
                
                
                 }
@@ -203,7 +203,7 @@ def do_something_pretty(jsondata,name):
     # Build a placeholder for the cluster#,distance values
     #repstr = '<tr><td>%d</td><td>%s</td></tr>' * (valuelen-1)
     # print(repstr)
-    output= 'With an alcohol consumption of : ' +value[1]+ '<br/>And a GDP per Capita of: ' + value[0]+ '<br/>The chance ' +name + 's' +' would be conisidered unhappy: ' + value[4] 
+    output= 'With an alcohol consumption of : ' +value[1]+ '<br/>And a GDP of: ' + value[0]+ '<br/>The chance ' +name +' would be conisidered happy: ' + value[4] 
     # Build the entire html table for the results data representation
     #tablestr = 'Cluster assignment: %s<br><br><table border="1"><tr><th>Cluster</th><th>Distance From Center</th></tr>'+ repstr + "</table>"
     #return tablestr % data

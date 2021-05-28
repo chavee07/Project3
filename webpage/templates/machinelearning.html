@@ -62,17 +62,20 @@
           <h2>Machine Learning</h2>
 
           {% block content %}
-          <h3>Determine if a country is happy based on its GDP and alcohol consumption.</h3>
+          <h3>Determine if a country is happy or unhappy based on its GDP per Capita and alcohol consumption.</h3>
           <form method=post>
           <dl>
-        
+
+
+                   
+            <h1>GDP</h1>
+            Enter GDP per Capita<br/><br/>
+            {{form.gdp}}
+
             <h1>Consumption</h1>
             Enter the Alcohol Consumption <br/><br/>
             {{form.consumption}}
-         
-            <h1>GDP</h1>
-            Enter GDP <br/><br/>
-            {{form.gdp}}
+  
        
             <h1>Name the Imaginary Country (optional)</h1> 
             You can give a name to the country you are "weighing", if you like.<br /><br />
